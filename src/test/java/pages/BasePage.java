@@ -1,24 +1,22 @@
 package pages;
 
 import io.qameta.allure.Allure;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.ByteArrayInputStream;
 import java.time.Duration;
 
-import static java.sql.DriverManager.getDriver;
-//import static utilities.DriverSetup.getDriver;
+import static utilities.DriverSetup.getDriver;
 
 public class BasePage {
     public WebElement getElement(By locator){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
-
-    private WebDriver getDriver() {
-        return null;
     }
 
     public void clickOnElement(By locator){
